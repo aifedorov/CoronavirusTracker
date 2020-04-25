@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F8C654D32454996A00BB64F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C654D22454996A00BB64F3 /* AppDelegate.swift */; };
-		F8C654D52454996A00BB64F3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C654D42454996A00BB64F3 /* ContentView.swift */; };
 		F8C654D72454996C00BB64F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8C654D62454996C00BB64F3 /* Assets.xcassets */; };
-		F8C654DA2454996C00BB64F3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8C654D92454996C00BB64F3 /* Preview Assets.xcassets */; };
 		F8C654DD2454996C00BB64F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8C654DB2454996C00BB64F3 /* Main.storyboard */; };
 		F8C654E92454996C00BB64F3 /* CoronavirusTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C654E82454996C00BB64F3 /* CoronavirusTrackerTests.swift */; };
 		F8C654F42454996C00BB64F3 /* CoronavirusTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C654F32454996C00BB64F3 /* CoronavirusTrackerUITests.swift */; };
@@ -36,9 +34,7 @@
 /* Begin PBXFileReference section */
 		F8C654CF2454996A00BB64F3 /* CoronavirusTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoronavirusTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8C654D22454996A00BB64F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F8C654D42454996A00BB64F3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F8C654D62454996C00BB64F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F8C654D92454996C00BB64F3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F8C654DC2454996C00BB64F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F8C654DE2454996C00BB64F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8C654DF2454996C00BB64F3 /* CoronavirusTracker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CoronavirusTracker.entitlements; sourceTree = "<group>"; };
@@ -99,22 +95,12 @@
 			isa = PBXGroup;
 			children = (
 				F8C654D22454996A00BB64F3 /* AppDelegate.swift */,
-				F8C654D42454996A00BB64F3 /* ContentView.swift */,
 				F8C654D62454996C00BB64F3 /* Assets.xcassets */,
 				F8C654DB2454996C00BB64F3 /* Main.storyboard */,
 				F8C654DE2454996C00BB64F3 /* Info.plist */,
 				F8C654DF2454996C00BB64F3 /* CoronavirusTracker.entitlements */,
-				F8C654D82454996C00BB64F3 /* Preview Content */,
 			);
 			path = CoronavirusTracker;
-			sourceTree = "<group>";
-		};
-		F8C654D82454996C00BB64F3 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				F8C654D92454996C00BB64F3 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		F8C654E72454996C00BB64F3 /* CoronavirusTrackerTests */ = {
@@ -240,7 +226,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8C654DD2454996C00BB64F3 /* Main.storyboard in Resources */,
-				F8C654DA2454996C00BB64F3 /* Preview Assets.xcassets in Resources */,
 				F8C654D72454996C00BB64F3 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -266,7 +251,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8C654D52454996A00BB64F3 /* ContentView.swift in Sources */,
 				F8C654D32454996A00BB64F3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

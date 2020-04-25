@@ -12,25 +12,21 @@ import SwiftUI
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-    var window: NSWindow!
-
+    var statusBarItem: NSStatusItem!
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Create the SwiftUI view that provides the window contents.
-        let contentView = ContentView()
+        statusBarItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
 
-        // Create the window and set the content view. 
-        window = NSWindow(
-            contentRect: NSRect(x: 0, y: 0, width: 480, height: 300),
-            styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
-            backing: .buffered, defer: false)
-        window.center()
-        window.setFrameAutosaveName("Main Window")
-        window.contentView = NSHostingView(rootView: contentView)
-        window.makeKeyAndOrderFront(nil)
+        if let button = statusBarItem.button {
+            button.image = #imageLiteral(resourceName: "coronavirus")
+            button.action = #selector(printQuote(_:))
+        }
     }
 
-    func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
+    @objc func printQuote(_ sender: Any?) {
+      let quoteText = "Never put off until tomorrow what you can do the day after tomorrow."
+      let quoteAuthor = "Mark Twain"
+
+      print("\(quoteText) — \(quoteAuthor)")
     }
 }
