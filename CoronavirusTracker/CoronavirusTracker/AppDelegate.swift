@@ -15,18 +15,29 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var statusBarItem: NSStatusItem!
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        statusBarItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
-
-        if let button = statusBarItem.button {
-            button.image = #imageLiteral(resourceName: "coronavirus")
-            button.action = #selector(printQuote(_:))
-        }
+        statusBarItem = makeStatusBarItem()
     }
 
-    @objc func printQuote(_ sender: Any?) {
-      let quoteText = "Never put off until tomorrow what you can do the day after tomorrow."
-      let quoteAuthor = "Mark Twain"
+    // MARK: Private
 
-      print("\(quoteText) — \(quoteAuthor)")
+    private func makeIcon() -> NSImage {
+        let image = NSImage(named: NSImage.Name("status-bar-icon"))!
+        image.size = NSSize(width: 20, height: 20)
+        return image
+    }
+
+    private func makeStatusBarItem() -> NSStatusItem {
+        let statusBarItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
+        let menu = NSMenu()
+        let title = "quit".localized
+        menu.addItem(NSMenuItem(title: title, action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
+
+        statusBarItem.menu = menu
+
+        if let button = statusBarItem.button {
+            button.image = makeIcon()
+        }
+
+        return statusBarItem
     }
 }

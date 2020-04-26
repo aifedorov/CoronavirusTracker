@@ -12,6 +12,9 @@
 		F8C654DD2454996C00BB64F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8C654DB2454996C00BB64F3 /* Main.storyboard */; };
 		F8C654E92454996C00BB64F3 /* CoronavirusTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C654E82454996C00BB64F3 /* CoronavirusTrackerTests.swift */; };
 		F8C654F42454996C00BB64F3 /* CoronavirusTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C654F32454996C00BB64F3 /* CoronavirusTrackerUITests.swift */; };
+		F8E8FB1B24558E9800980909 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8E8FB1A24558E9800980909 /* Preview Assets.xcassets */; };
+		F8E8FB1D24559D8E00980909 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F8E8FB1C24559D8E00980909 /* Localizable.strings */; };
+		F8E8FB2024559F0400980909 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E8FB1F24559F0400980909 /* String+Localized.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		F8C654EF2454996C00BB64F3 /* CoronavirusTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoronavirusTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8C654F32454996C00BB64F3 /* CoronavirusTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronavirusTrackerUITests.swift; sourceTree = "<group>"; };
 		F8C654F52454996C00BB64F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F8E8FB1A24558E9800980909 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F8E8FB1C24559D8E00980909 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		F8E8FB1F24559F0400980909 /* String+Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,11 +100,10 @@
 		F8C654D12454996A00BB64F3 /* CoronavirusTracker */ = {
 			isa = PBXGroup;
 			children = (
+				F8E8FB1F24559F0400980909 /* String+Localized.swift */,
 				F8C654D22454996A00BB64F3 /* AppDelegate.swift */,
-				F8C654D62454996C00BB64F3 /* Assets.xcassets */,
-				F8C654DB2454996C00BB64F3 /* Main.storyboard */,
-				F8C654DE2454996C00BB64F3 /* Info.plist */,
-				F8C654DF2454996C00BB64F3 /* CoronavirusTracker.entitlements */,
+				F8E8FB1924558E8000980909 /* Preview Content */,
+				F8E8FB1E24559D9700980909 /* Resources */,
 			);
 			path = CoronavirusTracker;
 			sourceTree = "<group>";
@@ -119,6 +124,26 @@
 				F8C654F52454996C00BB64F3 /* Info.plist */,
 			);
 			path = CoronavirusTrackerUITests;
+			sourceTree = "<group>";
+		};
+		F8E8FB1924558E8000980909 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F8E8FB1A24558E9800980909 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F8E8FB1E24559D9700980909 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F8C654D62454996C00BB64F3 /* Assets.xcassets */,
+				F8C654DB2454996C00BB64F3 /* Main.storyboard */,
+				F8C654DE2454996C00BB64F3 /* Info.plist */,
+				F8C654DF2454996C00BB64F3 /* CoronavirusTracker.entitlements */,
+				F8E8FB1C24559D8E00980909 /* Localizable.strings */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,6 +251,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8C654DD2454996C00BB64F3 /* Main.storyboard in Resources */,
+				F8E8FB1D24559D8E00980909 /* Localizable.strings in Resources */,
+				F8E8FB1B24558E9800980909 /* Preview Assets.xcassets in Resources */,
 				F8C654D72454996C00BB64F3 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,6 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8E8FB2024559F0400980909 /* String+Localized.swift in Sources */,
 				F8C654D32454996A00BB64F3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -415,14 +443,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = CoronavirusTracker/CoronavirusTracker.entitlements;
+				CODE_SIGN_ENTITLEMENTS = CoronavirusTracker/Resources/CoronavirusTracker.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"CoronavirusTracker/Preview Content\"";
 				DEVELOPMENT_TEAM = F462U224MZ;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = CoronavirusTracker/Info.plist;
+				INFOPLIST_FILE = CoronavirusTracker/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -438,14 +466,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = CoronavirusTracker/CoronavirusTracker.entitlements;
+				CODE_SIGN_ENTITLEMENTS = CoronavirusTracker/Resources/CoronavirusTracker.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"CoronavirusTracker/Preview Content\"";
 				DEVELOPMENT_TEAM = F462U224MZ;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = CoronavirusTracker/Info.plist;
+				INFOPLIST_FILE = CoronavirusTracker/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
