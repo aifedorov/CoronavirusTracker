@@ -14,30 +14,46 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     var statusBarItem: NSStatusItem!
 
+    private var webservice = WebService()
+
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         statusBarItem = makeStatusBarItem()
+        requestStats { [unowned self] (stats) in
+            let title: String
+            if let stats = stats {
+                title = "🔼\(stats.todayCases)🦠\(stats.cases)💀\(stats.deaths)"
+            } else {
+                title = "⚠️"
+            }
+
+            DispatchQueue.main.async {
+                guard let button = self.statusBarItem.button else { return }
+                button.title = title
+            }
+        }
     }
 
     // MARK: Private
 
-    private func makeIcon() -> NSImage {
-        let image = NSImage(named: NSImage.Name("status-bar-icon"))!
-        image.size = NSSize(width: 20, height: 20)
-        return image
-    }
-
     private func makeStatusBarItem() -> NSStatusItem {
-        let statusBarItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
+        let statusBar = NSStatusBar.system
+        let statusBarItem = statusBar.statusItem(withLength: NSStatusItem.variableLength)
         let menu = NSMenu()
         let title = "quit".localized
         menu.addItem(NSMenuItem(title: title, action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
 
         statusBarItem.menu = menu
+        return statusBarItem
+    }
 
-        if let button = statusBarItem.button {
-            button.image = makeIcon()
+    private func requestStats(completion: @escaping (CountryStats?) -> Void) {
+        let url = URL(string: "https://corona.lmao.ninja/v2/countries/ru")!
+        let resource = Resource<CountryStats>(url: url) { (data) -> CountryStats? in
+            return try? JSONDecoder().decode(CountryStats.self, from: data)
         }
 
-        return statusBarItem
+        webservice.load(resource) { stats in
+            completion(stats)
+        }
     }
 }

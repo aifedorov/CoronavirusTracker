@@ -11,21 +11,15 @@
 		F8C654D72454996C00BB64F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8C654D62454996C00BB64F3 /* Assets.xcassets */; };
 		F8C654DD2454996C00BB64F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8C654DB2454996C00BB64F3 /* Main.storyboard */; };
 		F8C654E92454996C00BB64F3 /* CoronavirusTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C654E82454996C00BB64F3 /* CoronavirusTrackerTests.swift */; };
-		F8C654F42454996C00BB64F3 /* CoronavirusTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C654F32454996C00BB64F3 /* CoronavirusTrackerUITests.swift */; };
 		F8E8FB1B24558E9800980909 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8E8FB1A24558E9800980909 /* Preview Assets.xcassets */; };
 		F8E8FB1D24559D8E00980909 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F8E8FB1C24559D8E00980909 /* Localizable.strings */; };
 		F8E8FB2024559F0400980909 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E8FB1F24559F0400980909 /* String+Localized.swift */; };
+		F8E8FB262455B76700980909 /* CountryStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E8FB252455B76700980909 /* CountryStats.swift */; };
+		F8E8FB282455B77700980909 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E8FB272455B77700980909 /* WebService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		F8C654E52454996C00BB64F3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F8C654C72454996A00BB64F3 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F8C654CE2454996A00BB64F3;
-			remoteInfo = CoronavirusTracker;
-		};
-		F8C654F02454996C00BB64F3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F8C654C72454996A00BB64F3 /* Project object */;
 			proxyType = 1;
@@ -44,12 +38,11 @@
 		F8C654E42454996C00BB64F3 /* CoronavirusTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoronavirusTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8C654E82454996C00BB64F3 /* CoronavirusTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronavirusTrackerTests.swift; sourceTree = "<group>"; };
 		F8C654EA2454996C00BB64F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F8C654EF2454996C00BB64F3 /* CoronavirusTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoronavirusTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F8C654F32454996C00BB64F3 /* CoronavirusTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronavirusTrackerUITests.swift; sourceTree = "<group>"; };
-		F8C654F52454996C00BB64F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8E8FB1A24558E9800980909 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F8E8FB1C24559D8E00980909 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		F8E8FB1F24559F0400980909 /* String+Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
+		F8E8FB252455B76700980909 /* CountryStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryStats.swift; sourceTree = "<group>"; };
+		F8E8FB272455B77700980909 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,13 +60,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F8C654EC2454996C00BB64F3 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -82,7 +68,6 @@
 			children = (
 				F8C654D12454996A00BB64F3 /* CoronavirusTracker */,
 				F8C654E72454996C00BB64F3 /* CoronavirusTrackerTests */,
-				F8C654F22454996C00BB64F3 /* CoronavirusTrackerUITests */,
 				F8C654D02454996A00BB64F3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -92,7 +77,6 @@
 			children = (
 				F8C654CF2454996A00BB64F3 /* CoronavirusTracker.app */,
 				F8C654E42454996C00BB64F3 /* CoronavirusTrackerTests.xctest */,
-				F8C654EF2454996C00BB64F3 /* CoronavirusTrackerUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -100,6 +84,8 @@
 		F8C654D12454996A00BB64F3 /* CoronavirusTracker */ = {
 			isa = PBXGroup;
 			children = (
+				F8E8FB242455B75600980909 /* Network */,
+				F8E8FB232455B74B00980909 /* Model */,
 				F8E8FB1F24559F0400980909 /* String+Localized.swift */,
 				F8C654D22454996A00BB64F3 /* AppDelegate.swift */,
 				F8E8FB1924558E8000980909 /* Preview Content */,
@@ -115,15 +101,6 @@
 				F8C654EA2454996C00BB64F3 /* Info.plist */,
 			);
 			path = CoronavirusTrackerTests;
-			sourceTree = "<group>";
-		};
-		F8C654F22454996C00BB64F3 /* CoronavirusTrackerUITests */ = {
-			isa = PBXGroup;
-			children = (
-				F8C654F32454996C00BB64F3 /* CoronavirusTrackerUITests.swift */,
-				F8C654F52454996C00BB64F3 /* Info.plist */,
-			);
-			path = CoronavirusTrackerUITests;
 			sourceTree = "<group>";
 		};
 		F8E8FB1924558E8000980909 /* Preview Content */ = {
@@ -144,6 +121,22 @@
 				F8E8FB1C24559D8E00980909 /* Localizable.strings */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		F8E8FB232455B74B00980909 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F8E8FB252455B76700980909 /* CountryStats.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F8E8FB242455B75600980909 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				F8E8FB272455B77700980909 /* WebService.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,24 +177,6 @@
 			productReference = F8C654E42454996C00BB64F3 /* CoronavirusTrackerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		F8C654EE2454996C00BB64F3 /* CoronavirusTrackerUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F8C654FE2454996C00BB64F3 /* Build configuration list for PBXNativeTarget "CoronavirusTrackerUITests" */;
-			buildPhases = (
-				F8C654EB2454996C00BB64F3 /* Sources */,
-				F8C654EC2454996C00BB64F3 /* Frameworks */,
-				F8C654ED2454996C00BB64F3 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F8C654F12454996C00BB64F3 /* PBXTargetDependency */,
-			);
-			name = CoronavirusTrackerUITests;
-			productName = CoronavirusTrackerUITests;
-			productReference = F8C654EF2454996C00BB64F3 /* CoronavirusTrackerUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -216,10 +191,6 @@
 						CreatedOnToolsVersion = 11.4.1;
 					};
 					F8C654E32454996C00BB64F3 = {
-						CreatedOnToolsVersion = 11.4.1;
-						TestTargetID = F8C654CE2454996A00BB64F3;
-					};
-					F8C654EE2454996C00BB64F3 = {
 						CreatedOnToolsVersion = 11.4.1;
 						TestTargetID = F8C654CE2454996A00BB64F3;
 					};
@@ -240,7 +211,6 @@
 			targets = (
 				F8C654CE2454996A00BB64F3 /* CoronavirusTracker */,
 				F8C654E32454996C00BB64F3 /* CoronavirusTrackerTests */,
-				F8C654EE2454996C00BB64F3 /* CoronavirusTrackerUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -264,13 +234,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F8C654ED2454996C00BB64F3 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -280,6 +243,8 @@
 			files = (
 				F8E8FB2024559F0400980909 /* String+Localized.swift in Sources */,
 				F8C654D32454996A00BB64F3 /* AppDelegate.swift in Sources */,
+				F8E8FB282455B77700980909 /* WebService.swift in Sources */,
+				F8E8FB262455B76700980909 /* CountryStats.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,14 +256,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F8C654EB2454996C00BB64F3 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F8C654F42454996C00BB64F3 /* CoronavirusTrackerUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -306,11 +263,6 @@
 			isa = PBXTargetDependency;
 			target = F8C654CE2454996A00BB64F3 /* CoronavirusTracker */;
 			targetProxy = F8C654E52454996C00BB64F3 /* PBXContainerItemProxy */;
-		};
-		F8C654F12454996C00BB64F3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F8C654CE2454996A00BB64F3 /* CoronavirusTracker */;
-			targetProxy = F8C654F02454996C00BB64F3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -529,46 +481,6 @@
 			};
 			name = Release;
 		};
-		F8C654FF2454996C00BB64F3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = F462U224MZ;
-				INFOPLIST_FILE = CoronavirusTrackerUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = ru.home.aifedorov.CoronavirusTrackerUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = CoronavirusTracker;
-			};
-			name = Debug;
-		};
-		F8C655002454996C00BB64F3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = F462U224MZ;
-				INFOPLIST_FILE = CoronavirusTrackerUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = ru.home.aifedorov.CoronavirusTrackerUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = CoronavirusTracker;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -595,15 +507,6 @@
 			buildConfigurations = (
 				F8C654FC2454996C00BB64F3 /* Debug */,
 				F8C654FD2454996C00BB64F3 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F8C654FE2454996C00BB64F3 /* Build configuration list for PBXNativeTarget "CoronavirusTrackerUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F8C654FF2454996C00BB64F3 /* Debug */,
-				F8C655002454996C00BB64F3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
