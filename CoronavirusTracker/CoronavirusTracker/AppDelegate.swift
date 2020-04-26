@@ -16,6 +16,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     private var statusBarItem: NSStatusItem!
     private var timer: Timer!
 
+    private enum Constants {
+        static let errorTitle = "⚠️"
+    }
+
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         statusBarItem = makeStatusBarItem()
         setupTimer()
@@ -27,8 +31,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let statusBar = NSStatusBar.system
         let statusBarItem = statusBar.statusItem(withLength: NSStatusItem.variableLength)
         let menu = NSMenu()
-        let title = "quit".localized
-        menu.addItem(NSMenuItem(title: title, action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
+
+        let refresh = "refresh".localized
+        menu.addItem(NSMenuItem(title: refresh, action: #selector(refreshStats), keyEquivalent: "r"))
+
+        menu.addItem(NSMenuItem.separator())
+
+        let quit = "quit".localized
+        menu.addItem(NSMenuItem(title: quit, action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
 
         if let button = statusBarItem.button {
             button.title = "🦠⏳"
@@ -49,28 +59,69 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
 
-    private func refreshStats() {
-        requestStats { [unowned self] (stats) in
-            let title: String
-            if let stats = stats {
-                title = "🔼\(stats.todayCases)🦠\(stats.cases)💀\(stats.deaths)"
-            } else {
-                title = "⚠️"
-            }
+    private func requestHistoryData(completion: @escaping (HistoryData?) -> Void) {
+        let url = URL(string: "https://corona.lmao.ninja/v2/historical/ru")!
+        let resource = Resource<HistoryData>(url: url) { (data) -> HistoryData? in
+            return try? JSONDecoder().decode(HistoryData.self, from: data)
+        }
 
-            DispatchQueue.main.async {
-                guard let button = self.statusBarItem.button else { return }
-                button.title = title
-            }
+        webservice.load(resource) { stats in
+            completion(stats)
         }
     }
 
-    func setupTimer() {
-        timer = Timer.scheduledTimer(withTimeInterval: 60 * 60 * 12, repeats: true) { [weak self] _ in
+    @objc
+    private func refreshStats() {
+        let group = DispatchGroup()
+        var countryStats: CountryStats?
+        var historyData: HistoryData?
+
+        group.enter()
+        requestStats { (stats) in
+            countryStats = stats
+            group.leave()
+        }
+
+        group.enter()
+        requestHistoryData { (history) in
+            historyData = history
+            group.leave()
+        }
+
+        let result = group.wait(timeout: DispatchTime.now() + 45)
+        let title: String
+
+        switch result {
+        case .success:
+            guard let stats = countryStats else {
+                title = Constants.errorTitle
+                break
+            }
+            title = makeTitle(historyData, stats)
+
+        case .timedOut:
+            title = Constants.errorTitle
+        }
+
+        DispatchQueue.main.async {
+            guard let button = self.statusBarItem.button else { return }
+            button.title = title
+        }
+    }
+
+    private func setupTimer() {
+        // Updating every 3 hours
+        timer = Timer.scheduledTimer(withTimeInterval: 60 * 60 * 3, repeats: true) { [weak self] _ in
             guard let self = self else { return }
             self.refreshStats()
         }
 
         timer.fire()
+    }
+
+    private func makeTitle(_ history: HistoryData?, _ stats: CountryStats?) -> String {
+        guard let stats = stats else { return Constants.errorTitle }
+        let trend = TrendHelper.calculateTrend(history, stats)
+        return "\(trend)\(stats.todayCases)🦠\(stats.cases)💀\(stats.deaths)"
     }
 }

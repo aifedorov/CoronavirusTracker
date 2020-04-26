@@ -16,6 +16,9 @@
 		F8E8FB2024559F0400980909 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E8FB1F24559F0400980909 /* String+Localized.swift */; };
 		F8E8FB262455B76700980909 /* CountryStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E8FB252455B76700980909 /* CountryStats.swift */; };
 		F8E8FB282455B77700980909 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E8FB272455B77700980909 /* WebService.swift */; };
+		F8E8FB2A2455D35100980909 /* HistoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E8FB292455D35100980909 /* HistoryData.swift */; };
+		F8E8FB2D2455EBC300980909 /* TrendHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E8FB2C2455EBC300980909 /* TrendHelper.swift */; };
+		F8E8FB2F2455ED8000980909 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E8FB2E2455ED8000980909 /* DateHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +46,9 @@
 		F8E8FB1F24559F0400980909 /* String+Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
 		F8E8FB252455B76700980909 /* CountryStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryStats.swift; sourceTree = "<group>"; };
 		F8E8FB272455B77700980909 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		F8E8FB292455D35100980909 /* HistoryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryData.swift; sourceTree = "<group>"; };
+		F8E8FB2C2455EBC300980909 /* TrendHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendHelper.swift; sourceTree = "<group>"; };
+		F8E8FB2E2455ED8000980909 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +90,7 @@
 		F8C654D12454996A00BB64F3 /* CoronavirusTracker */ = {
 			isa = PBXGroup;
 			children = (
+				F8E8FB2B2455EBA500980909 /* Untils */,
 				F8E8FB242455B75600980909 /* Network */,
 				F8E8FB232455B74B00980909 /* Model */,
 				F8E8FB1F24559F0400980909 /* String+Localized.swift */,
@@ -127,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				F8E8FB252455B76700980909 /* CountryStats.swift */,
+				F8E8FB292455D35100980909 /* HistoryData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -137,6 +145,15 @@
 				F8E8FB272455B77700980909 /* WebService.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		F8E8FB2B2455EBA500980909 /* Untils */ = {
+			isa = PBXGroup;
+			children = (
+				F8E8FB2C2455EBC300980909 /* TrendHelper.swift */,
+				F8E8FB2E2455ED8000980909 /* DateHelper.swift */,
+			);
+			path = Untils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,6 +261,9 @@
 				F8E8FB2024559F0400980909 /* String+Localized.swift in Sources */,
 				F8C654D32454996A00BB64F3 /* AppDelegate.swift in Sources */,
 				F8E8FB282455B77700980909 /* WebService.swift in Sources */,
+				F8E8FB2D2455EBC300980909 /* TrendHelper.swift in Sources */,
+				F8E8FB2A2455D35100980909 /* HistoryData.swift in Sources */,
+				F8E8FB2F2455ED8000980909 /* DateHelper.swift in Sources */,
 				F8E8FB262455B76700980909 /* CountryStats.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
